@@ -2,7 +2,7 @@
 
 sts-output-credential is output aws credential tool.
 
-Run `aws sts assume-role` and create ``.aws/credentials`
+Run `aws sts assume-role` and create `.aws/credentials`
 
 ## Use
 
