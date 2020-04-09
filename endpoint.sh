@@ -5,6 +5,7 @@ CREDENTIAL_FILE=${CREDENTIAL_FILE:-./.aws/credentials}
 INTERVAL_TIME=${INTERVAL:-3600}
 DAEMON=${DAEMON:-0}
 SESSION_DURATION=$((${INTERVAL_TIME}-60))
+LOOP_INTERVAL=$((${SESSION_DURATION}-30))
 
 USER_NAME=$(aws sts get-caller-identity | jq -r .Arn | cut -f 2 -d "/")
 
@@ -27,6 +28,6 @@ EOS
     break
   fi
 
-  echo "wait ${SESSION_DURATION}s..."
-  sleep ${SESSION_DURATION}
+  echo "wait ${LOOP_INTERVAL}s..."
+  sleep ${LOOP_INTERVAL}
 done
