@@ -27,6 +27,6 @@ EOS
     break
   fi
 
-  echo "wait ${INTERVAL_TIME}s..."
-  sleep ${INTERVAL_TIME}
+  echo "wait ${SESSION_DURATION}s..."
+  sleep ${SESSION_DURATION}
 done
